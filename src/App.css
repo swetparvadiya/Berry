@@ -1,0 +1,8 @@
+.app {
+  height: 850px;
+  padding-top: 50px;
+}
+.overflow-test {
+  overflow-x: hidden !important;
+  text-overflow: ellipsis !important;
+}
