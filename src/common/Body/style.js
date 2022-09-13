@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: theme.palette.custom.buttonBackground,
     width: "352px",
-    borderradius: "8px",
+    borderRadius: "8px",
     alignContent: "left",
     marginLeft: "10px",
     marginTop: "28px",

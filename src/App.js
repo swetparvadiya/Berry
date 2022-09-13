@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import "./App.css";
 import Login from "./module/Login/Login";
 import { Routes, Route } from "react-router-dom";
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes>
+      <Routes style={{ backgroundColor: "secondary" }}>
         <Route
           path="/"
           element={
@@ -34,13 +34,16 @@ function App() {
         <Route
           path="/*"
           element={
-            <Box backgroundColor="primary.main">
+            <Box backgroundColor="secondary.main">
               <Home toggleTheme={toggleTheme} />
             </Box>
           }
         />
+        <Route exact path="/hello" element={<Box>hello</Box>} />
       </Routes>
     </ThemeProvider>
+
+    // <>hy</>
   );
 }
 

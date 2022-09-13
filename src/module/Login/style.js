@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   back: {
     backgroundColor: theme.palette.secondary.main,
-    borderradius: "15px",
+    borderRadius: "15px",
   },
   logo: {
     marginTop: 8,

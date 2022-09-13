@@ -35,6 +35,7 @@ import MailboxContainer from "./MailboxContainer";
 import { Link } from "react-router-dom";
 import BoxHover from "./BoxHover";
 import useStyles from "./style";
+import useIsMobile from "../../hooks/useIsMobile";
 
 function createData(
   id,
@@ -212,6 +213,7 @@ const rows = [
 ];
 
 const MailNav = () => {
+  const isMobile = useIsMobile();
   const theme = useTheme();
   const [showActionId, setShowActionId] = useState(-1);
   const {
@@ -230,7 +232,7 @@ const MailNav = () => {
   }, [dataPage]);
 
   return (
-    <Grid>
+    <Grid className={isMobile ? classes.mainContent : null}>
       <AppBar
         position="static"
         elevation={0}
@@ -238,7 +240,7 @@ const MailNav = () => {
         className={classes.header}
       >
         <Toolbar>
-          <Grid className={classes.appBarContent} container spacing={3.4}>
+          <Grid className={classes.appBarContent} container spacing={3}>
             <Grid item>
               <MenuIcon className={classes.menuContainer} />
             </Grid>
@@ -274,7 +276,7 @@ const MailNav = () => {
           </Grid>
         </Toolbar>
       </AppBar>
-      <TableContainer component={Paper} className={classes.mainTableContent}>
+      <TableContainer className={classes.mainTableContent}>
         <Table className={classes.tableContainerContent}>
           <TableBody>
             {rows

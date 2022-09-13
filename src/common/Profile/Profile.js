@@ -51,7 +51,7 @@ const Profile = () => {
         sx={{
           height: "51px",
           alignItems: "center",
-          borderradius: "27px",
+          borderRadius: "27px",
           transition: "all .2s ease-in-out",
           backgroundColor: "rgb(227 242 253)",
           color: "rgb(94, 53, 177)",
@@ -226,7 +226,7 @@ const Profile = () => {
                           maxWidth: 350,
                           minWidth: 300,
                           backgroundColor: theme.palette.background.paper,
-                          borderradius: "10px",
+                          borderRadius: "10px",
                           [theme.breakpoints.down("md")]: {
                             minWidth: "100%",
                           },

@@ -7,7 +7,6 @@ import { Button, Grid } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Profile1 from "../../assets/Images/profile1.png";
 import StarBorderTwoToneIcon from "@mui/icons-material/StarBorderTwoTone";
-import LabelImportantTwoToneIcon from "@mui/icons-material/LabelImportantTwoTone";
 import CoronavirusTwoToneIcon from "@mui/icons-material/CoronavirusTwoTone";
 import MoreHorizTwoToneIcon from "@mui/icons-material/MoreHorizTwoTone";
 import AttachmentIcon from "@mui/icons-material/Attachment";
@@ -17,8 +16,11 @@ import { Link } from "react-router-dom";
 import useStyles from "./style";
 import { useTheme } from "@mui/material/styles";
 import { Stack } from "@mui/system";
+import useIsMobile from "../../hooks/useIsMobile";
+import LabelTwoToneIcon from "@mui/icons-material/LabelTwoTone";
 
 const SingleMail = () => {
+  const isMobile = useIsMobile();
   const theme = useTheme();
   const classes = useStyles();
 
@@ -68,8 +70,15 @@ const SingleMail = () => {
         </Toolbar>
       </AppBar>
       <Box>
-        <Box container className={classes.discriptionContainer}>
-          <Box item xs={12}>
+        <Box
+          container
+          className={
+            isMobile
+              ? classes.mobilediscriptionContainer
+              : classes.discriptionContainer
+          }
+        >
+          <Box item>
             <Typography
               fontSize="22px"
               fontWeight="bold"
@@ -79,12 +88,20 @@ const SingleMail = () => {
               Wak butowi uvsa doci vojormim mitin dodpat negti azolop citof.
             </Typography>
           </Box>
-          <Box container display="flex" direction="row" xs={12}>
+          <Box
+            container
+            display="flex"
+            justifyContent="flex-end"
+            direction="row"
+          >
             <Grid item>
               <StarBorderTwoToneIcon className={classes.icon2} />
             </Grid>
             <Grid item>
-              <LabelImportantTwoToneIcon className={classes.icon2} />
+              <LabelTwoToneIcon
+                style={{ color: "rgb(103 58 183)" }}
+                className={classes.icon2}
+              />
             </Grid>
             <Grid item>
               <CoronavirusTwoToneIcon className={classes.icon2} />
@@ -130,16 +147,20 @@ const SingleMail = () => {
           0 Attachments
         </Grid>
       </Box>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} marginTop="15px">
         <Button
           variant="outlined"
-          backgroundColor="#260"
+          style={{ color: "rgb(33 150 243)", borderColor: "rgb(33 150 243)" }}
           startIcon={<ReplyTwoToneIcon />}
           padding="2"
         >
           Send
         </Button>
-        <Button variant="outlined" startIcon={<ForwardIcon />}>
+        <Button
+          variant="outlined"
+          style={{ color: "rgb(33 150 243)", borderColor: "rgb(33 150 243)" }}
+          startIcon={<ForwardIcon />}
+        >
           Forward
         </Button>
       </Stack>

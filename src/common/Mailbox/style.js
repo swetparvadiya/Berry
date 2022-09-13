@@ -5,13 +5,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "40px",
     marginLeft: "-20px",
   },
+  mainContent: {
+    marginLeft: "10px",
+  },
   head: {
     flexGrow: 1,
     overflowX: "auto",
   },
   mainTableContent: {
     marginTop: "20px",
-    borderradius: "10px",
+    borderRadius: "10px",
   },
   tableContainerContent: {
     backgroundColor: theme.palette.custom.buttonBackground,
@@ -23,13 +26,14 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
   },
   checkboxContent: {
-    maxWidth: "20px",
+    marginTop: "-20px",
+    maxWidth: "15px",
   },
   starContent: {
-    maxWidth: "5px",
+    maxWidth: "2px",
   },
   labelContent: {
-    maxWidth: "15px",
+    maxWidth: "5px",
   },
 
   nameContent: {
@@ -75,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   headerContent: {
     alignContent: "center",
     backgroundColor: theme.palette.custom.whiteBackground,
-    borderradius: "8px",
+    borderRadius: "8px",
     width: "100%",
     height: "50px",
   },

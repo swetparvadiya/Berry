@@ -14,7 +14,7 @@ const OutlineInputStyle = styled(OutlinedInput)(({ theme }) => ({
   width: 482,
   paddingLeft: 16,
   paddingRight: 16,
-  borderradius: "10px",
+  borderRadius: "10px",
   backgroundColor: "rgb(250 250 250)",
   "& input": {
     background: "transparent !important",
@@ -64,7 +64,7 @@ const SearchSection = () => {
               <ButtonBase>
                 <HeaderAvatarStyle
                   variant="rounded"
-                  sx={{ borderradius: "10px" }}
+                  sx={{ borderRadius: "10px" }}
                 >
                   <IconAdjustmentsHorizontal stroke={1.5} size="1.4rem" />
                 </HeaderAvatarStyle>

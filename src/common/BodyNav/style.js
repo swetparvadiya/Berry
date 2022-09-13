@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
   navbar: {
-    borderradius: "9px",
+    borderRadius: "9px",
     marginTop: "22px",
   },
   icon: {

@@ -10,7 +10,7 @@ import SearchIcon from "@material-ui/icons/Search";
 const useStyles = makeStyles((theme) => ({
   search: {
     backgroundColor: "rgb(250 250 250)",
-    borderradius: "10px",
+    borderRadius: "10px",
   },
 }));
 

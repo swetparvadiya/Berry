@@ -4,12 +4,13 @@ const useStyles = makeStyles((theme) => ({
   head: {
     flexGrow: 1,
     marginTop: "28px",
-    marginRight: "13px",
-    borderradius: "8px",
+    marginRight: "15px",
+    borderRadius: "8px",
     height: "100%",
     paddingBottom: "30px",
     backgroundColor: theme.palette.custom.buttonBackground,
-    paddingLeft: "25px",
+    paddingLeft: "15px",
+    marginLeft: "10px",
   },
   forTextContent: {
     color: theme.palette.text.primary,
@@ -24,11 +25,16 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.5px",
   },
   navbar: {
-    borderradius: "9px",
+    borderRadius: "9px",
     marginTop: "22px",
     marginLeft: "-10px",
     paddingTop: "17px",
     paddingRight: "15px",
+  },
+  mobilediscriptionContainer: {
+    marginTop: "25px",
+    marginLeft: "2px",
+    alignItems: "center",
   },
   discriptionContainer: {
     marginTop: "25px",

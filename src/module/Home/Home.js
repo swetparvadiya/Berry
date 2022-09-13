@@ -30,9 +30,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Profile from "../../common/Profile/Profile";
 import Layout from "./Layout";
 import { useTheme } from "@mui/material/styles";
+import useIsMobile from "../../hooks/useIsMobile";
 // import useStyles from "./style";
 
-const drawerWidth = "288px";
+const drawerWidth = "272px";
+
 const List1 = [
   {
     id: 0,
@@ -129,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
   },
   back: {
     backgroundColor: "rgb(227, 242, 253)",
-    borderradius: "16px",
+    borderRadius: "16px",
   },
 
   menuButton: {
@@ -176,9 +178,9 @@ const useStyles = makeStyles((theme) => ({
     width: "350px",
   },
   iconContent: {
-    borderradius: "20px",
-    width: "40px",
-    height: "40px",
+    borderRadius: "20px",
+    width: "30px",
+    height: "30px",
     backgroundColor: "rgb(237 231 246)",
     color: "rgb(94, 53, 177)",
     "&:hover": {
@@ -198,6 +200,7 @@ const useStyles = makeStyles((theme) => ({
       color: "#ffffff",
     },
   },
+
   icon4: {
     background: "rgb(94, 53, 177)",
     color: "rgb(94, 53, 177)",
@@ -214,6 +217,7 @@ const useStyles = makeStyles((theme) => ({
 const Home = ({ toggleTheme }) => {
   const classes = useStyles();
   const theme = useTheme();
+  const isMobile = useIsMobile();
 
   const [open, setOpen] = useState(false);
 
@@ -231,7 +235,7 @@ const Home = ({ toggleTheme }) => {
       <Drawer
         open={open}
         onClose={() => setOpen(false)}
-        variant="persistent"
+        variant={isMobile ? "temporary" : "persistent"}
         PaperProps={{
           style: {
             border: "none",
@@ -247,7 +251,14 @@ const Home = ({ toggleTheme }) => {
             color: theme.palette.text.primary,
           }}
         >
-          <Toolbar />
+          {isMobile ? (
+            <Grid container item marginLeft="27px" width="350px">
+              <img src={Logo} width="102px" alt="logo" />
+            </Grid>
+          ) : (
+            <Toolbar />
+          )}
+
           <Typography className={classes.heading} variant="subtitle1">
             Dashboard
           </Typography>
@@ -367,7 +378,7 @@ const Home = ({ toggleTheme }) => {
                   color: "rgb(94, 53, 177)",
                 }}
               >
-                <IconMenu2 stroke={1.2} size="1.3rem" />
+                <IconMenu2 stroke={1.2} size="1.2rem" />
               </Avatar>
             </ButtonBase>
           </Box>
@@ -405,7 +416,7 @@ const Home = ({ toggleTheme }) => {
             <Grid item display={{ xs: "none", md: "block" }}>
               <ButtonBase
                 display={{ xs: "none", md: "block" }}
-                borderradius="25px"
+                borderRadius="25px"
               >
                 <Avatar
                   variant="rounded"
@@ -421,7 +432,7 @@ const Home = ({ toggleTheme }) => {
               </ButtonBase>
             </Grid>
             <Grid item display={{ xs: "none", md: "block" }}>
-              <ButtonBase borderradius="12px">
+              <ButtonBase borderRadius="12px">
                 <Avatar
                   variant="rounded"
                   className={classes.icon4}
@@ -440,6 +451,7 @@ const Home = ({ toggleTheme }) => {
           </Grid>
         </Grid>
       </AppBar>
+
       <main>
         <Grid
           className={

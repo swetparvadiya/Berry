@@ -6,13 +6,16 @@ import DrawerBody from "../../common/DrawerBody/DrawerBody";
 import EmailBody from "../../common/EmailBody/EmailBody";
 import useStyles from "./style";
 import { useTheme } from "@mui/material/styles";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const Layout = () => {
   const theme = useTheme();
   const classes = useStyles();
+  const isMobile = useIsMobile();
+
   return (
     <Grid
-      className={classes.mainContent}
+      className={isMobile ? classes.mainMobileContent : classes.mainContent}
       sx={{ backgroundColor: theme.palette.custom.bodyBack }}
     >
       <BodyNav />
