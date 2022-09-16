@@ -238,6 +238,7 @@ const Home = ({ toggleTheme }) => {
         variant={isMobile ? "temporary" : "persistent"}
         PaperProps={{
           style: {
+            maxWidth: "250px",
             border: "none",
             backgroundColor: theme.palette.custom.whiteBackground,
           },

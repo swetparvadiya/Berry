@@ -96,7 +96,7 @@ const Login = () => {
                         paddingX: "70px",
                       }}
                       disableRipple
-                      borderRadius="2px"
+                      borderradius="2px"
                       disabled
                     >
                       OR

@@ -276,59 +276,64 @@ const MailNav = () => {
           </Grid>
         </Toolbar>
       </AppBar>
-      <TableContainer className={classes.mainTableContent}>
-        <Table className={classes.tableContainerContent}>
-          <TableBody>
-            {rows
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow
-                    hover
-                    key={row.id}
-                    component={Link}
-                    to="/home/email"
-                    className={classes.rowContent}
-                    onMouseEnter={() => {
-                      setShowActionId(row.id);
-                    }}
-                    onMouseLeave={() => setShowActionId(-1)}
-                  >
-                    <TableCell className={classes.checkboxContent}>
-                      {row.checkbox}
-                    </TableCell>
-                    <TableCell className={classes.starContent}>
-                      {row.start}
-                    </TableCell>
-                    <TableCell className={classes.labelContent}>
-                      {row.label}
-                    </TableCell>
-                    <TableCell width="1px" className={classes.profileContent}>
-                      {row.profile}
-                    </TableCell>
-                    <TableCell className={classes.nameContent}>
-                      {row.name}
-                    </TableCell>
-                    <TableCell className={classes.classificationContent}>
-                      {row.classification}
-                    </TableCell>
-                    <TableCell>
-                      {row.id === showActionId ? (
-                        <Box marginLeft="-40px">
-                          <BoxHover />
-                        </Box>
-                      ) : (
-                        <Box className={classes.timeContent} alignItems="right">
-                          {row.time}
-                        </Box>
-                      )}
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Grid>
+        <TableContainer>
+          <Table className={classes.mainTableContent}>
+            <TableBody className={classes.tableContainerContent}>
+              {rows
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row) => {
+                  return (
+                    <TableRow
+                      hover
+                      key={row.id}
+                      component={Link}
+                      to="/home/email"
+                      className={classes.rowContent}
+                      onMouseEnter={() => {
+                        setShowActionId(row.id);
+                      }}
+                      onMouseLeave={() => setShowActionId(-1)}
+                    >
+                      <TableCell className={classes.checkboxContent}>
+                        {row.checkbox}
+                      </TableCell>
+                      <TableCell className={classes.starContent}>
+                        {row.start}
+                      </TableCell>
+                      <TableCell className={classes.labelContent}>
+                        {row.label}
+                      </TableCell>
+                      <TableCell width="1px" className={classes.profileContent}>
+                        {row.profile}
+                      </TableCell>
+                      <TableCell className={classes.nameContent}>
+                        {row.name}
+                      </TableCell>
+                      <TableCell className={classes.classificationContent}>
+                        {row.classification}
+                      </TableCell>
+                      <TableCell>
+                        {row.id === showActionId ? (
+                          <Box marginLeft="-40px">
+                            <BoxHover />
+                          </Box>
+                        ) : (
+                          <Box
+                            className={classes.timeContent}
+                            alignItems="right"
+                          >
+                            {row.time}
+                          </Box>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Grid>
     </Grid>
   );
 };
